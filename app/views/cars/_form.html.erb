@@ -1,0 +1,8 @@
+<%= simple_form_for(@car) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>
+<a><%= link_to 'Back to cars list', cars_path %></a>
