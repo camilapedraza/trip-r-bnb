@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_car, only: [:create, :show]
+  before_action :set_car
   def show
     @booking = Booking.find(params[:id])
   end
@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.car = @car
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to car_booking_path(@car, @booking)
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,10 +22,10 @@ class BookingsController < ApplicationController
   private
 
   def set_car
-    @car = Car.find(params[:id])
+    @car = Car.find(params[:car_id])
   end
 
   def booking_params
-    params.require(:booking).permit(:starting_date, :end_date)
+    params.require(:booking).permit(:starting_date, :ending_date)
   end
 end
