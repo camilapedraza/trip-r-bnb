@@ -24,6 +24,7 @@ class BookingsController < ApplicationController
   def set_car
     @car = Car.find(params[:id])
   end
+
   def booking_params
     params.require(:booking).permit(:starting_date, :end_date)
   end
