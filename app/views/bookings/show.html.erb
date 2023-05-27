@@ -1,4 +1,4 @@
 <h1>You have booked a <%= @booking.car.name%></h1>
 <p>from <%= @booking.starting_date %> to <%= @booking.end_date%></p>
 
-<%= link_to "Back to cars", cars_path %>
+<%= link_to "Back to car", car_path(@car) %>
