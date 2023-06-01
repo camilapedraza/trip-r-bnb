@@ -2,6 +2,9 @@
 <p><%= @car.location %></p>
 <p><%= @car.description %></p>
 <h5><%= @car.price %> €/jour</h5>
+<% @car.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <h3><%= link_to 'Book this car!', new_car_booking_path(@car) %></h3>
 <a><%= link_to 'Edit this car', edit_car_path %></a><br>
 <%= link_to "Delete", car_path(@car), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%><br>
