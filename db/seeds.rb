@@ -81,48 +81,48 @@ puts "Creating bookings"
 Booking.create(
   car: car1,
   user: alexis_renter,
-  starting_date:,
-  ending_date:
+  starting_date: DateTime.new(2023, 9, 1, 17),
+  ending_date: DateTime.new(2023, 9, 3, 19)
 )
 Booking.create(
   car: car2,
   user: gaetan_renter,
-  starting_date:,
-  ending_date:
+  starting_date: DateTime.new(2023, 8, 27, 12),
+  ending_date: DateTime.new(2023, 8, 29, 12)
 )
 Booking.create(
   car: car3,
   user: camila_renter,
-  starting_date:,
-  ending_date:
+  starting_date: DateTime.new(2023, 9, 13, 18),
+  ending_date: DateTime.new(2023, 9, 20, 14)
 )
 Booking.create(
   car: car4,
   user: fausto_renter,
-  starting_date:,
-  ending_date:
+  starting_date: DateTime.new(2023, 10, 3, 15),
+  ending_date: DateTime.new(2023, 10, 7, 8)
 )
 Booking.create(
   car: car5,
   user: alexis_renter,
-  starting_date:,
-  ending_date:
+  starting_date: DateTime.new(2023, 9, 2, 8),
+  ending_date: DateTime.new(2023, 9, 2, 20)
 )
 Booking.create(
   car: car6,
   user: gaetan_renter,
-  starting_date:,
-  ending_date:
+  starting_date: DateTime.new(2023, 9, 15, 10),
+  ending_date: DateTime.new(2023, 9, 20, 16)
 )
 Booking.create(
   car: car7,
   user: camila_renter,
-  starting_date:,
-  ending_date:
+  starting_date: DateTime.new(2023, 11, 3, 16),
+  ending_date: DateTime.new(2023, 11, 17, 11)
 )
 Booking.create(
   car: car8,
   user: fausto_renter,
-  starting_date:,
-  ending_date:
+  starting_date: DateTime.new(2023, 11, 7, 7),
+  ending_date: DateTime.new(2023, 11, 17, 17)
 )
