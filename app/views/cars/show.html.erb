@@ -3,10 +3,10 @@
 <p><%= @car.description %></p>
 <h5><%= @car.price %> €/jour</h5>
 <h3><%= link_to 'Book this car!', new_car_booking_path(@car) %></h3>
-<% if policy(@restaurant).edit? %>
+<% if policy(@car).edit? %>
 <a><%= link_to 'Edit this car', edit_car_path %></a><br>
 <% end %>
-<% if policy(@restaurant).delete? %>
+<% if policy(@car).destroy? %>
 <%= link_to "Delete", car_path(@car), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%><br>
 <% end %>
 <a><%= link_to 'Back to cars list', cars_path %></a>
