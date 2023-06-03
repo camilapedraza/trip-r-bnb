@@ -7,6 +7,7 @@ export default class extends Controller {
 
   static targets = ["location"]
   connect() {
+    console.log("hello")
     this.geocoder = new MapboxGeocoder({
       accessToken: this.apiKeyValue,
       types: "country,region,place,postcode,locality,neighborhood,address"
@@ -16,11 +17,11 @@ export default class extends Controller {
     this.geocoder.on("clear", () => this.#clearInputValue())
   }
   #setInputValue(event) {
-    this.addressTarget.value = event.result["place_name"]
+    this.locationTarget.value = event.result["place_name"]
   }
 
   #clearInputValue() {
-    this.addressTarget.value = ""
+    this.locationTarget.value = ""
   }
 
   disconnect() {
