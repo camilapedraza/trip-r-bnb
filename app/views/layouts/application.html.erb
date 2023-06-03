@@ -8,12 +8,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
   </head>
 
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div class="container-fluid">
-        <%= link_to "#", class: "navbar-brand" do %>
+        <%= link_to cars_path, class: "navbar-brand" do %>
           <%= image_tag "https://images.caradisiac.com/logos/5/8/2/0/265820/S8-renault-depose-le-logo-4-189304.jpg" %>
         <% end %>
 
