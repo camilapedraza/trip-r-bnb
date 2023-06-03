@@ -2,9 +2,23 @@
 <p><%= @car.location %></p>
 <p><%= @car.description %></p>
 <h5><%= @car.price %> €/jour</h5>
-<% @car.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width: 400px; height: 400px">
+  <div class="carousel-inner">
+    <% @car.photos.each_with_index do |photo, index| %>
+      <div class="carousel-item <%= class_names(active: index.zero?) %>">
+        <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill %>
+      </div>
+    <% end %>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 <br>
 <strong><%= link_to 'Book this car!', new_car_booking_path(@car) %></strong>
@@ -16,3 +30,4 @@
 </ul>
 
 <%= link_to 'Back to listings', cars_path %>
+
