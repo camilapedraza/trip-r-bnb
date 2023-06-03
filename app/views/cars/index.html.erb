@@ -5,9 +5,21 @@
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 <ul>
+<div class="cards">
   <% @cars.each do |car| %>
-    <li><%= link_to car.name, car_path(car) %></li>
+    <div class="card-trip">
+    <%= car.photos.attached? ? cl_image_tag(car.photos.first.key) : image_tag('4L.jpg') %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= link_to car.name, car_path(car) %></h2>
+        <p><%= car.description %></p>
+      </div>
+    <h2 class="card-trip-pricing"><%= car.price %>$</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+    </div>
   <% end %>
+</div>
 </ul>
 
 <%= link_to 'Rent your 4L', new_car_path %>
