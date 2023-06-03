@@ -2,6 +2,17 @@
 
 <ul>
   <% @cars.each do |car| %>
+  <div class="card-trip">
+  <%= car.photos.attached? ? cl_image_tag(car.photos.first.key) : image_tag('4L.jpg') %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= car.name %></h2>
+      <p><%= car.description %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= car.price %>$</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
     <li><%= link_to car.name, car_path(car) %></li>
   <% end %>
 </ul>
