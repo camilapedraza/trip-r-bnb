@@ -1,20 +1,21 @@
 <h1>Find the perfect 4L for you</h1>
 
 <ul>
+<div class="cards">
   <% @cars.each do |car| %>
-  <div class="card-trip">
-  <%= car.photos.attached? ? cl_image_tag(car.photos.first.key) : image_tag('4L.jpg') %>
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= car.name %></h2>
-      <p><%= car.description %></p>
-    </div>
+    <div class="card-trip">
+    <%= car.photos.attached? ? cl_image_tag(car.photos.first.key) : image_tag('4L.jpg') %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= link_to car.name, car_path(car) %></h2>
+        <p><%= car.description %></p>
+      </div>
     <h2 class="card-trip-pricing"><%= car.price %>$</h2>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-  </div>
-</div>
-    <li><%= link_to car.name, car_path(car) %></li>
+    </div>
+    </div>
   <% end %>
+</div>
 </ul>
 
 <%= link_to 'Rent your 4L', new_car_path %>
