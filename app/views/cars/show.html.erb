@@ -1,15 +1,51 @@
-<h2><%= @car.name %></h2>
-<p><%= @car.location %></p>
-<p><%= @car.description %></p>
-<h5><%= @car.price %> €/jour</h5>
-<% @car.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-<h3><%= link_to 'Book this car!', new_car_booking_path(@car) %></h3>
-<% if policy(@car).edit? %>
-<a><%= link_to 'Edit this car', edit_car_path %></a><br>
-<% end %>
-<% if policy(@car).destroy? %>
-<%= link_to "Delete", car_path(@car), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%><br>
-<% end %>
-<a><%= link_to 'Back to cars list', cars_path %></a>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2 class="font-weight-bold"><%= @car.name %></h2>
+      <p><%= @car.location %></p>
+      <p><%= @car.description %></p>
+    </div>
+  </div>
+
+<div id="carouselExampleControls" class="carousel slide mx-auto d-flex align-items-center justify-content-center" data-bs-ride="carousel" style="width: 800px; height: 400px">
+  <div class="carousel-inner">
+    <% @car.photos.each_with_index do |photo, index| %>
+      <div class="carousel-item <%= 'active' if index.zero? %>">
+        <%= cl_image_tag photo.key, height: 400, width: 800, crop: :fill %>
+      </div>
+    <% end %>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2><%= @car.price %> €/jour</h2>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h3><%= link_to 'Book this car!', new_car_booking_path(@car), class: "btn btn-lg btn-primary" %></h3>
+  </div>
+
+   <div class="row text-center">
+    <div class="col-md-12">
+      <% if policy(@car).edit? %>
+        <a><%= link_to 'Edit this car', edit_car_path, class: "btn btn-secondary" %></a>
+      <% end %>
+      <a><%= link_to 'Back to cars list', cars_path, class: "btn btn-secondary" %></a>
+      <% if policy(@car).destroy? %>
+        <%= link_to "Delete", car_path(@car), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>
