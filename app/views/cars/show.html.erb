@@ -24,28 +24,26 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
-
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h2><%= @car.price %> €/jour</h2>
-    </div>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h2><%= @car.price %> €/jour</h2>
   </div>
+</div>
 
-  <div class="row text-center">
-    <div class="col-md-12">
-      <h3><%= link_to 'Book this car!', new_car_booking_path(@car), class: "btn btn-lg btn-primary" %></h3>
-  </div>
+<div class="row text-center">
+  <div class="col-md-12">
+    <h3><%= link_to 'Book this car!', new_car_booking_path(@car), class: "btn btn-lg btn-primary" %></h3>
+</div>
 
-   <div class="row text-center">
-    <div class="col-md-12">
-      <% if policy(@car).edit? %>
-        <a><%= link_to 'Edit this car', edit_car_path, class: "btn btn-secondary" %></a>
-      <% end %>
-      <a><%= link_to 'Back to cars list', cars_path, class: "btn btn-secondary" %></a>
-      <% if policy(@car).destroy? %>
-        <%= link_to "Delete", car_path(@car), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class: "btn btn-danger" %>
-      <% end %>
-    </div>
+ <div class="row text-center">
+  <div class="col-md-12">
+    <% if policy(@car).edit? %>
+      <a><%= link_to 'Edit this car', edit_car_path, class: "btn btn-secondary" %></a>
+    <% end %>
+    <a><%= link_to 'Back to cars list', cars_path, class: "btn btn-secondary" %></a>
+    <% if policy(@car).destroy? %>
+      <%= link_to "Delete", car_path(@car), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class: "btn btn-danger" %>
+    <% end %>
   </div>
+</div>
 </div>
