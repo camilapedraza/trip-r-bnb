@@ -1,9 +1,11 @@
-<%= simple_form_for(@car) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
-<% end %>
-<a><%= link_to 'Back to cars list', cars_path %></a>
+<div class="container mt-5">
+  <%= simple_form_for(@car) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :price %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit 'Create Car', class: 'btn btn-primary' %>
+  <% end %>
+  <a class: 'btn btn-secondary mt-3'><%= link_to 'Back to cars list', cars_path %></a>
+</div>
