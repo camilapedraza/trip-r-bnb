@@ -25,56 +25,56 @@ car1 = Car.create(
   name: "Renault 4L 1983",
   description: "Berline, Essence, Mars/1983, 83000 Km, 4 portes avec hayon, Pneus neufs, Démarreur neuf",
   location: "Messancy, Belgique",
-  price: 5500,
+  price: 36,
   user: fausto_owner
 )
 car2 = Car.create(
   name: "Renault 4 (4 CV)",
   description: "Berline, Essence, Juillet/1985, 146 000 Km , 4 portes avec hayon",
   location: "Paris (75013)",
-  price: 6000,
+  price: 76,
   user: alexis_owner
 )
 car3 = Car.create(
   name: "4L en Bel Etat",
   description: "Vend Renault 4L GTL TRÈS BONNE ÉTAT, pas de corrosion, dernier travaux effectués (démarreur, pompe à essence, filtre à essence, bougies, vis platiné)",
   location: "Cagnes-sur-Mer (06800)",
-  price: 6700,
+  price: 45,
   user: gaetan_owner
 )
 car4 = Car.create(
   name: "Renault 4",
   description: "Renault 4 (4 CV) *, Berline, Essence, Mars/1986, 4 portes avec hayon",
   location: "Lannion (22300)",
-  price: 7300,
+  price: 105,
   user: camila_owner
 )
 car5 = Car.create(
   name: "Renault 4 TL Savane",
   description: "contrôle technique,nombreux accessoires une jante, deux pneux, console centrale avec auto radio, vendue avec ou sans décoration en total covering",
   location: "Chauriat (63117)",
-  price: 7500,
+  price: 92,
   user: fausto_owner
 )
 car6 = Car.create(
   name: "Renault 4 GTL Clan",
   description: "Renault 6 TL (6CV) *, Essence, Février/1975, 24000 Km , 4 portes. Très bon état.",
   location: "Genevreuille (70240)",
-  price: 6200,
+  price: 20,
   user: alexis_owner
 )
 car7 = Car.create(
   name: "Renault 4 TL Savane Bleue",
   description: "Sublime R4 TL modèle 1988 reconstruite à neuf (moteur refait en rodage, freins train AV et carrosserie refaits, intérieur sellerie moquette ciel de toit refaits aussi).",
   location: "Leuilly-sous-Coucy (02380)",
-  price: 10500,
+  price: 50,
   user: gaetan_owner
 )
 car8 = Car.create(
   name: "Renault 4 GTL Clan 1990",
   description: " Berline, Essence, Décembre/1990, 123 000 Km , 4 portes avec hayon, 9 000 €. entierement restauree histo avant limpide de 1ere main malaga",
   location: "Amboise (37400)",
-  price: 9200,
+  price: 99,
   user: camila_owner
 )
 puts "Creating bookings"

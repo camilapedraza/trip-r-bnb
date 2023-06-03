@@ -1,4 +1,10 @@
-<h1>You have booked a <%= @booking.car.name%></h1>
-<p>from <%= @booking.starting_date %> to <%= @booking.ending_date%></p>
-
-<%= link_to "Back to car", car_path(@car) %>
+<h1>Booking Details</h1>
+<div class="py-3">
+  <p>You have booked a <%= @booking.car.name%> from <%= @booking.starting_date %> to <%= @booking.ending_date%></p>
+  <h2>Car Details</h2>
+  <p>Located in <%= @booking.car.location %></p>
+  <p>Description: <%= @booking.car.description %></p>
+  <p>Total price: <%=(@booking.ending_date - @booking.starting_date).to_i*@car.price%>€</p>
+  <br>
+  <%= link_to "Back to car listing", car_path(@car) %>
+</div>
