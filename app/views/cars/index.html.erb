@@ -1,6 +1,3 @@
-<h1>Check out our 4L Car Rental !</h1>
-
-
 <ul>
   <% @cars.each do |car| %>
     <li><%= link_to car.name, car_path(car) %></li>
