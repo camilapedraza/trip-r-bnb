@@ -1,6 +1,6 @@
 class BookingPolicy < ApplicationPolicy
   def show?
-    true
+    record.user == user
   end
 
   def new?
@@ -17,8 +17,8 @@ class BookingPolicy < ApplicationPolicy
     #   scope.all
     # end
     def resolve
-      #user.admin? ? scope.all : scope.where(user: user)
-      scope.all
+      user.admin? ? scope.all : scope.where(user: user)
+      #scope.all
       # If users can see all restaurants
       # scope.where(user: user) # If users can only see their restaurants
       # scope.where("name LIKE 't%'") # If users can only see restaurants starting with `t`
