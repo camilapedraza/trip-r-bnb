@@ -4,7 +4,7 @@
   <h2>Car Details</h2>
   <p>Located in <%= @booking.car.location %></p>
   <p>Description: <%= @booking.car.description %></p>
-  <p>Daily rate: <%= @booking.car.price %> €/jour</p>
+  <p>Total price: <%=(@booking.ending_date - @booking.starting_date).to_i*@car.price%>€</p>
   <br>
   <%= link_to "Back to car listing", car_path(@car) %>
 </div>
