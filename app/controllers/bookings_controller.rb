@@ -2,14 +2,17 @@ class BookingsController < ApplicationController
   before_action :set_car
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.user = current_user
     @booking.car = @car
     if @booking.save
