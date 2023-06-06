@@ -1,0 +1,14 @@
+<h1>Your Bookings</h1>
+<h2>Bookings for your cars</h2>
+<br>
+<h2>Cars you've booked</h2>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li><strong><%= booking.car.name %>
+    <li>Booked from <%= booking.car.user.email %></li>
+    <li>From <%= booking.starting_date %></li>
+    <li>Until <%= booking.ending_date %> </li>
+    <li>Total price: <%=(booking.ending_date - booking.starting_date).to_i*booking.car.price%>€</li>
+    <br>
+  <% end %>
+</ul>
