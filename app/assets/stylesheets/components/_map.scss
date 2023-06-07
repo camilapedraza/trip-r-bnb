@@ -1,6 +1,5 @@
 .mapboxgl-popup {
   max-width: 200px;
-  transition: 0.5s ease;
 }
 
 .mapboxgl-popup-content {
@@ -11,8 +10,16 @@ a {
   text-decoration: none;
   color: black;
   border: none;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
 }
-a:hover, a:visited, a:link, a:active {
+a:hover {
   text-decoration: none;
-  color: black;
+  color: #99C1B9;
+}
+.mapboxgl-popup-close-button:hover {
+  text-decoration: none;
+  color: red;
 }
