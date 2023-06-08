@@ -1,2 +1,30 @@
-<h2><%= car.name %></h2>
-<p><%= car.location %></p>
+<div class="popup row">
+  <div class="popup-photos">
+    <% if car.photos.attached? %>
+        <div id="carouselExampleControls" class="carousel slide mx-auto d-flex align-items-center justify-content-center" data-bs-ride="carousel" style="width: 200px">
+          <div class="carousel-inner">
+            <% car.photos.each_with_index do |photo, index| %>
+              <div class="carousel-item <%= 'active' if index.zero? %>">
+                <%= cl_image_tag photo.key, width: 200, crop: :fill, class: "rounded-4" %>
+              </div>
+            <% end %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      <% end %>
+    </div>
+    <div class="popup-info">
+      <%= link_to car_path(car), :action => 'go' do %>
+        <h4 class="pt-2"><%= car.name %></h4>
+        <p><%= car.location %></p>
+        <h5><%= car.price %> €/jour</h5>
+      <% end %>
+    </div>
+</div>
