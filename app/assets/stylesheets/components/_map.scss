@@ -6,3 +6,20 @@
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
+a {
+  text-decoration: none;
+  color: black;
+  border: none;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+a:hover {
+  text-decoration: none;
+  color: #99C1B9;
+}
+.mapboxgl-popup-close-button:hover {
+  text-decoration: none;
+  color: red;
+}
