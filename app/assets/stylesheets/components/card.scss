@@ -44,6 +44,21 @@
   grid-gap: 16px;
 }
 
+.cards a {
+  text-decoration: none;
+  color: black;
+  border: none;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.cards a:hover {
+  text-decoration: none;
+  color: #99C1B9;
+}
+
 .card-booking {
   overflow: hidden;
   height: 150px;

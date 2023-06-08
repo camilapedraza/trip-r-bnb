@@ -6,7 +6,7 @@
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
-a {
+.popup a {
   text-decoration: none;
   color: black;
   border: none;
@@ -15,7 +15,7 @@ a {
   -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
 }
-a:hover {
+.popup a:hover {
   text-decoration: none;
   color: #99C1B9;
 }
