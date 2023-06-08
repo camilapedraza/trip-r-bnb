@@ -15,10 +15,10 @@
               <% else %>
                 <%= image_tag "avatar.png", class:"avatar" %>
               <% end %>
-              Booked to <%= booking.user.email %>
+              Booked to <strong><%= booking.user.email %></strong>
             </p>
-            <p><strong>From</strong> <%= booking.starting_date %> — <strong>Until</strong> <%= booking.ending_date %></p>
-            <p><strong>Total price:</strong> <%=(booking.ending_date - booking.starting_date).to_i*booking.car.price%>€</p>
+            <p>From <strong><%= booking.starting_date %></strong> — Until <strong><%= booking.ending_date %></strong></p>
+            <p>Total price: <strong><%=(booking.ending_date - booking.starting_date).to_i*booking.car.price%>€</strong></p>
         </div>
       </div>
       <br>
@@ -46,10 +46,10 @@
               <% else %>
                 <%= image_tag "avatar.png", class:"avatar" %>
               <% end %>
-                Booked from <%= booking.car.user.email %></p>
+                Booked from <strong><%= booking.car.user.email %></strong></p>
             </p>
-            <p><strong>From</strong> <%= booking.starting_date %> — <strong>Until</strong> <%= booking.ending_date %></p>
-            <p><strong>Total price:</strong> <%=(booking.ending_date - booking.starting_date).to_i*booking.car.price%>€</p>
+            <p>From <strong><%= booking.starting_date %></strong> — Until <strong><%= booking.ending_date %></strong></p>
+            <p>Total price: <strong><%=(booking.ending_date - booking.starting_date).to_i*booking.car.price%>€</strong></p>
         </div>
       </div>
       <br>
