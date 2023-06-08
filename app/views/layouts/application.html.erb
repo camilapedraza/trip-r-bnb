@@ -14,7 +14,7 @@
 
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <div class="container-fluid">
+      <div class="container" style="width: 100%;">
         <%= link_to root_path, class: "navbar-brand" do %>
           <%= image_tag "4L-logo.jpg" %>
         <% end %>
@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container mx-auto p-2" style="width: 90%;">
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
