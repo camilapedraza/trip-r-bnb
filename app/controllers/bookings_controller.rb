@@ -3,6 +3,11 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
+    @owner_bookings = []
+    @renter_bookings = []
+    @bookings.each do |booking|
+      booking.user == current_user ? @renter_bookings << booking : @owner_bookings << booking
+    end
   end
 
   def show

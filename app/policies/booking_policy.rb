@@ -21,7 +21,7 @@ class BookingPolicy < ApplicationPolicy
     #   scope.all
     # end
     def resolve
-      user.admin? ? scope.all : scope.where(user: user)
+      user.admin? ? scope.all : scope.where(user: user).or(scope.where(car_id: Car.where(user: user).ids))
       # can also implement as just admin? but need to define in application policy > scope class
       # scope.all
       # If users can see all restaurants
