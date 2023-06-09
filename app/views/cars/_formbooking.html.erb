@@ -1,7 +1,5 @@
 <%= simple_form_for [@car, @booking] do |f| %>
   <%= f.input :starting_date %>
   <%= f.input :ending_date %>
-  <%= f.submit %>
+  <%= f.button :submit, class: "btn btn-info rounded-4", value: "Reserver"%>
 <% end %>
-<br>
-<%= link_to 'Back to car listing', car_path(@car) %>
