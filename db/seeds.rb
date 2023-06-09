@@ -12,10 +12,25 @@ Car.destroy_all
 User.destroy_all
 
 puts "Creating users"
-fausto = User.create(email: "fausto@tripper.com", password: "fausto123")
-alexis = User.create(email: "alexis@tripper.com", password: "alexis123")
-gaetan = User.create(email: "gaetan@tripper.com", password: "gaetan123")
-camila = User.create(email: "camila@tripper.com", password: "camila123")
+fausto = User.new(email: "fausto@tripper.com", password: "fausto123")
+fausto.photo.attach(io: File.open('app/assets/images/user_seeds/fausto.png'), filename: "fausto.png", content_type: "image/png")
+fausto.save
+
+alexis = User.new(email: "alexis@tripper.com", password: "alexis123")
+alexis.photo.attach(io: File.open('app/assets/images/user_seeds/alexis.png'), filename: "alexis.png", content_type: "image/png")
+alexis.save
+
+gaetan = User.new(email: "gaetan@tripper.com", password: "gaetan123")
+gaetan.photo.attach(io: File.open('app/assets/images/user_seeds/gaetan.png'), filename: "gaetan.png", content_type: "image/png")
+gaetan.save
+
+camila = User.new(email: "camila@tripper.com", password: "camila123")
+camila.photo.attach(io: File.open('app/assets/images/user_seeds/camila.png'), filename: "camila.png", content_type: "image/png")
+camila.save
+
+admin = User.new(email: "admin@tripper.com", password: "admin123")
+admin.admin = true
+admin.save
 
 puts "Creating cars"
 
