@@ -16,7 +16,7 @@
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div class="container" style="width: 100%;">
         <%= link_to root_path, class: "navbar-brand" do %>
-          <%= image_tag "4L-logo.jpg" %>
+          <%= image_tag "logo.png" %>
         <% end %>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,6 +26,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto">
             <li class="nav-item active">
+              <li class="nav-item">
+                <%= link_to "Rent my 4L", new_car_path, class: "nav-link" %>
+              </li>
               <%= link_to "All Cars", root_path, class: "nav-link" %>
             </li>
             <% if user_signed_in? %>

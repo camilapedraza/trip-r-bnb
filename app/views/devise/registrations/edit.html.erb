@@ -25,15 +25,15 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "btn btn-info" %>
   </div>
 <% end %>
 
-<%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete} %>
+<%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-warning" %>
 <br>
 <br>
 <h3>Cancel my account</h3>
 
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></div>
 
 <%= link_to "Back", :back %>
