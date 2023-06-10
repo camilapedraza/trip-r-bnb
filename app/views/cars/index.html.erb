@@ -6,12 +6,13 @@
           <%= car.photos.attached? ? cl_image_tag(car.photos.first.key) : image_tag('4L.jpg') %>
           <div class="card-trip-infos">
             <%= link_to car_path(car), :action => 'go' do %>
-            <div>
-              <h2><%= car.name %></h2>
-              <p><%= car.description %></p>
-            </div>
+              <div>
+                <h2><%= car.name %></h2>
+                <p><%= car.description.match?(/(.{50})/) ? car.description.match(/(.{50})/)[1]+"..." : car.description %></p>
+                <%=  %>
+              </div>
            <% end %>
-            <h2 class="card-trip-pricing"><%= car.price %>€/day</h2>
+            <h2 class="card-trip-pricing"><%= car.price %>€/jour</h2>
             <% if car.user.photo.attached? %>
               <%= cl_image_tag car.user.photo.key, class:"card-trip-user avatar-bordered" %>
             <% else %>
