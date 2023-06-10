@@ -14,7 +14,8 @@
         <%= link_to car_path(car), :action => 'go' do %>
         <div>
           <h2><%= car.name %></h2>
-          <p><%= car.description %></p>
+          <p><%= car.description.match?(/(.{50})/) ? car.description.match(/(.{50})/)[1]+"..." : car.description %></p>
+          <%=  %>
         </div>
         <% end %>
         <h2 class="card-trip-pricing"><%= car.price %>€/jour</h2>
