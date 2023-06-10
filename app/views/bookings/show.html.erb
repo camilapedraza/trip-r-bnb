@@ -6,5 +6,5 @@
   <p>Description: <%= @booking.car.description %></p>
   <p>Total price: <%=(@booking.ending_date - @booking.starting_date).to_i*@car.price%>€</p>
   <br>
-  <%= link_to "Back to car listing", car_path(@car), class: "btn btn-secondary" %>
+  <%= link_to "Back to car listing", car_path(@car), class: "btn btn-outline-secondary text-dark rounded-4" %>
 </div>
