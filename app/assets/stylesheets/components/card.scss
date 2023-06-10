@@ -65,6 +65,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -90,6 +91,7 @@
 
 .card-booking .card-booking-infos {
   padding: 16px;
+  min-width: 50%;
 }
 
 .card-booking-infos .avatar {
@@ -99,11 +101,21 @@
   border: white 1px solid;
 }
 
-.card-booking-infos .close {
-  position: absolute;
-  right: 16px;
-  top: 16px;
-  width: 20px;
+.card-booking .actions {
+  display: flex;
+  width: 50px;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  margin-left: 10px;
+  flex-grow: 1;
+}
+
+.actions .trash {
+  color: #c2476c;
+}
+
+.actions .edit {
+  color: #57c1d6;
 }
 
 // Smallest device

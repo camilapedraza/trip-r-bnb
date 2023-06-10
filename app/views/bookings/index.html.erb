@@ -9,7 +9,6 @@
         <%= booking.car.photos.attached? ? cl_image_tag(booking.car.photos.first.key) : image_tag('4L.jpg') %>
         <div class="card-booking-infos">
           <h2><%= booking.car.name %></h2>
-          <button type="button" class="btn-delete" aria-label="Close"></button>
             <p>
               <% if booking.user.photo.attached? %>
                 <%= cl_image_tag booking.user.photo.key, class:"avatar" %>
@@ -20,6 +19,16 @@
             </p>
             <p>From <strong><%= booking.starting_date %></strong> — Until <strong><%= booking.ending_date %></strong></p>
             <p>Total price: <strong><%=(booking.ending_date - booking.starting_date).to_i*booking.car.price%>€</strong></p>
+        </div>
+        <div class="actions">
+          <% if policy(booking).edit? %>
+            <div class="edit"><i class="fa-solid fa-pen-to-square"></i></div>
+          <% end %>
+         <% if policy(booking).destroy? %>
+            <%= link_to booking_path(booking), action: 'go', data: {turbo_method: :delete, turbo_confirm: "Cancel this booking?"} do %>
+              <div class="trash"><i class="fa-solid fa-trash"></i></div>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <br>
@@ -51,6 +60,18 @@
             </p>
             <p>From <strong><%= booking.starting_date %></strong> — Until <strong><%= booking.ending_date %></strong></p>
             <p>Total price: <strong><%=(booking.ending_date - booking.starting_date).to_i*booking.car.price%>€</strong></p>
+        </div>
+        <div class="actions">
+          <% if policy(booking).edit? %>
+            <%= link_to edit_booking_path(booking), :action => 'go' do %>
+              <div class="edit"><i class="fa-solid fa-pen-to-square"></i></div>
+            <% end %>
+          <% end %>
+          <% if policy(booking).destroy? %>
+            <%= link_to booking_path(booking), action: 'go', data: {turbo_method: :delete, turbo_confirm: "Cancel this booking?"} do %>
+              <div class="trash"><i class="fa-solid fa-trash"></i></div>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <br>
