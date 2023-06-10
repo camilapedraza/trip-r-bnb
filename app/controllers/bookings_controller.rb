@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_car, except: :index
+  before_action :set_car, except: %i[index edit update destroy]
 
   def index
     @bookings = policy_scope(Booking)
@@ -30,6 +30,25 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to bookings_path
+    authorize @booking
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    authorize @booking
+    redirect_to bookings_path, status: :see_other
   end
 
   private

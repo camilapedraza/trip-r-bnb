@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :cars do
     resources :bookings, only: %i[new create destroy show]
   end
-  resources :bookings, only: :index
+  resources :bookings, only: %i[index edit update destroy]
 end
