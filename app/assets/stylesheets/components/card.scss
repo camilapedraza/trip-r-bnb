@@ -99,6 +99,13 @@
   border: white 1px solid;
 }
 
+.card-booking-infos .close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 20px;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

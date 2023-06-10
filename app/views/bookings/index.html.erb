@@ -9,6 +9,7 @@
         <%= booking.car.photos.attached? ? cl_image_tag(booking.car.photos.first.key) : image_tag('4L.jpg') %>
         <div class="card-booking-infos">
           <h2><%= booking.car.name %></h2>
+          <button type="button" class="btn-delete" aria-label="Close"></button>
             <p>
               <% if booking.user.photo.attached? %>
                 <%= cl_image_tag booking.user.photo.key, class:"avatar" %>
