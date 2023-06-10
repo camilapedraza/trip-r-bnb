@@ -26,17 +26,16 @@
   text-decoration: none;
   color: #99C1B9;
 }
-.mapboxgl-popup-close-button:hover {
+.popup .mapboxgl-popup-close-button:hover {
   text-decoration: none;
-  text-shadow: white 10px;
 }
-.popup-info {
+.popup .popup-info {
   width: 200px;
 }
-.carousel-popup-width {
+.popup .carousel-popup-width {
   width: 100%;
 }
-.carousel-inner {
+.popup .carousel-inner {
   height: 150px;
   width: 200px;
 }
