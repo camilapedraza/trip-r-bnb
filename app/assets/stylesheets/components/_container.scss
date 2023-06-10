@@ -5,5 +5,22 @@
 }
 
 .main-container {
-  margin-right: 10px;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cards-container {
+  flex: 2;
+}
+
+.map-container {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
 }
