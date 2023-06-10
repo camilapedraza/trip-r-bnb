@@ -9,8 +9,10 @@ export default class extends Controller {
     console.log(this.itemsTarget)
     console.log(this.formTarget)
   }
+
   price(event) {
     event.preventDefault()
-    console.log(this.formTarget)
+    console.log(this.formTarget.value)
+
   }
 }
