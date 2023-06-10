@@ -16,13 +16,12 @@ class CarsController < ApplicationController
   def show
     authorize @car
     @booking = Booking.new
-    @bookings = policy_scope(Booking)
-    @bookings_dates = @bookings.map do |booking|
-      {
-        from: booking.starting_date,
-        to: booking.ending_date
-      }
-    end
+    # @bookings_dates = @bookings.map do |booking|
+    #   {
+    #     from: booking.starting_date,
+    #     to: booking.ending_date
+    #   }
+    # end
     @cars = policy_scope(Car).where(id: params[:id])
     @markers = @cars.geocoded.map do |car|
       {
