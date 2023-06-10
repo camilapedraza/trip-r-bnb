@@ -1,4 +1,7 @@
-<%= simple_form_for [@car, @booking] do |f| %>
+<%= simple_form_for [@car, @booking],
+  data: {
+    insert_total_price_target: "form",
+    action: "change->insert-total-price#price"} do |f|%>
   <%= f.input :starting_date %>
   <%= f.input :ending_date %>
   <%= f.button :submit, class: "btn btn-info rounded-4", value: "Book car"%>
