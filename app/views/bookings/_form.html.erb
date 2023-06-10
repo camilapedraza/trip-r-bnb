@@ -1,6 +1,6 @@
 <%= simple_form_for [@car, @booking] do |f| %>
-  <%= form.text_field :starting_date, class: 'datepicker-start form-control' %>
-  <%= form.text_field :ending_date, class: 'datepicker-end form-control' %>
+  <%= f.input :starting_date, start_year: Date.today.year, end_year: Date.today.year + 5 %>
+  <%= f.input :ending_date, , start_year: Date.today.year, end_year: Date.today.year + 5 %>
   <%= f.submit %>
 <% end %>
 <br>
