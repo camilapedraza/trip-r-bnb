@@ -1,5 +1,4 @@
 .container {
-  width: 960px;
   padding: 0 50px;
   margin: 0 auto;
 }
@@ -8,15 +7,17 @@
   display: flex;
   padding: 20px;
   justify-content: space-between;
-  align-items: flex-start;
 }
 
 .cards-container {
-  flex: 2;
+  width: 60%;
+  margin-right: 30px;
 }
 
-.map-container {
-  flex: 1;
+#map {
+  width: 40%;
+  height: 70vh;
+  position: sticky;
 }
 
 @media (max-width: 768px) {
