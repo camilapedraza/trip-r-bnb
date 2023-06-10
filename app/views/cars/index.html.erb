@@ -1,35 +1,27 @@
-<h1>Find the perfect 4L for you</h1>
-<div class="container">
-  <div style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <ul>
-  <div class="cards">
-    <% @cars.each do |car| %>
-      <div class="card-trip">
-      <%= car.photos.attached? ? cl_image_tag(car.photos.first.key) : image_tag('4L.jpg') %>
-      <div class="card-trip-infos">
-        <%= link_to car_path(car), :action => 'go' do %>
-        <div>
-          <h2><%= car.name %></h2>
-          <p><%= car.description.match?(/(.{50})/) ? car.description.match(/(.{50})/)[1]+"..." : car.description %></p>
-          <%=  %>
+<div class="main-container">
+  <div class="cards-container">
+    <div class="cards">
+      <% @cars.each do |car| %>
+        <div class="card-trip">
+          <%= car.photos.attached? ? cl_image_tag(car.photos.first.key) : image_tag('4L.jpg') %>
+          <div class="card-trip-infos">
+            <%= link_to car_path(car), :action => 'go' do %>
+              <div>
+                <h2><%= car.name %></h2>
+                <p><%= car.description.match?(/(.{50})/) ? car.description.match(/(.{50})/)[1]+"..." : car.description %></p>
+                <%=  %>
+              </div>
+           <% end %>
+            <h2 class="card-trip-pricing"><%= car.price %>€/jour</h2>
+            <% if car.user.photo.attached? %>
+              <%= cl_image_tag car.user.photo.key, class:"card-trip-user avatar-bordered" %>
+            <% else %>
+              <%= image_tag "avatar.png", class: "card-trip-user avatar-bordered" %>
+            <% end %>
+          </div>
         </div>
-        <% end %>
-        <h2 class="card-trip-pricing"><%= car.price %>€/jour</h2>
-<% if car.user.photo.attached? %>
-      <%= cl_image_tag car.user.photo.key, class:"card-trip-user avatar-bordered" %>
-<% else %>
-      <%= image_tag "avatar.png", class:"card-trip-user avatar-bordered" %>
-<% end %>
-
-      </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-  </ul>
-
-  <a><%= link_to 'Rent your 4L', new_car_path, class: "btn btn-info rounded-4" %></a>
+  <div id="map" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>

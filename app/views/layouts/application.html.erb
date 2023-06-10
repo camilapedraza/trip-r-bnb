@@ -26,6 +26,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto">
             <li class="nav-item active">
+              <li class="nav-item">
+                <%= link_to "Rent my 4L", new_car_path, class: "nav-link" %>
+              </li>
               <%= link_to "All Cars", root_path, class: "nav-link" %>
             </li>
             <% if user_signed_in? %>
