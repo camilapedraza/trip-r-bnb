@@ -15,6 +15,7 @@ class CarsController < ApplicationController
 
   def show
     authorize @car
+    @booking = Booking.new
   end
 
   def new

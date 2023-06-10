@@ -14,11 +14,17 @@
         <%= link_to car_path(car), :action => 'go' do %>
         <div>
           <h2><%= car.name %></h2>
-          <p><%= car.description %></p>
+          <p><%= car.description.match?(/(.{50})/) ? car.description.match(/(.{50})/)[1]+"..." : car.description %></p>
+          <%=  %>
         </div>
         <% end %>
-        <h2 class="card-trip-pricing"><%= car.price %>€/day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <h2 class="card-trip-pricing"><%= car.price %>€/jour</h2>
+<% if car.user.photo.attached? %>
+      <%= cl_image_tag car.user.photo.key, class:"card-trip-user avatar-bordered" %>
+<% else %>
+      <%= image_tag "avatar.png", class:"card-trip-user avatar-bordered" %>
+<% end %>
+
       </div>
       </div>
     <% end %>
