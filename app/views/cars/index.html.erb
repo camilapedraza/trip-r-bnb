@@ -19,7 +19,11 @@
         </div>
         <% end %>
         <h2 class="card-trip-pricing"><%= car.price %>€/jour</h2>
-      <img src="<%= cl_image_path car.user.photo.key %>" class="card-trip-user avatar-bordered" />
+<% if car.user.photo.attached? %>
+      <%= cl_image_tag car.user.photo.key, class:"card-trip-user avatar-bordered" %>
+<% else %>
+      <%= image_tag "avatar.png", class:"card-trip-user avatar-bordered" %>
+<% end %>
 
       </div>
       </div>
