@@ -7,7 +7,7 @@
 %>
   <%= f.input :price %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.button :submit, class: "btn btn-info" %>
+  <%= f.button :submit, class: "btn btn-outline-info text-dark rounded-4" %>
 <% end %>
 <br>
-<%= link_to 'Back to car list', cars_path, class: "btn btn-secondary" %>
+<%= link_to 'Back to car list', cars_path, class: "btn btn-outline-secondary text-dark rounded-4" %>
