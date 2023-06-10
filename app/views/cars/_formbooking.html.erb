@@ -2,7 +2,7 @@
   data: {
     insert_total_price_target: "form",
     action: "change->insert-total-price#price"} do |f|%>
-  <%= f.input :starting_date %>
-  <%= f.input :ending_date %>
+  <%= f.input :starting_date, start_year: Date.today.year, end_year: Date.today.year + 5 %>
+  <%= f.input :ending_date, start_year: Date.today.year, end_year: Date.today.year + 5 %>
   <%= f.button :submit, class: "btn btn-info rounded-4", value: "Book car"%>
 <% end %>
